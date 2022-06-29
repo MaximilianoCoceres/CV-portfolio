@@ -7,6 +7,8 @@ const slider = document.getElementById('slider');
 const buttonLeft = document.getElementById('button-left');
 const buttonRight = document.getElementById('button-right');
 const rootStyle = document.documentElement.style;
+const $form = document.querySelector('#form')
+const $button = document.querySelector('#mail_to_form')
 
 const sliderElements = document.querySelectorAll('.slider__element');
 let sliderCounter = 0;
@@ -93,3 +95,13 @@ slider.addEventListener('transitionend', reorderSlide);
 reorderSlide();
 
 window.addEventListener('resize', reorderSlide)
+
+
+$form.addEventListener('submit', handleSubmit)
+
+function handleSubmit(event){
+    event.preventDefault()
+    const form = new FormData(this)
+    $button.setAttribute('href',`mailto:maxiprog7@gmail.com?subject=${form.get('name')} ${form.get('mail')} &body=${form.get('comentario')}`)
+    $button.click()
+}

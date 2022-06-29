@@ -12,6 +12,7 @@
   --color-general:#44bba4;
   --slider-transform:0;
   --transition: transform 1s ;
+  --fontFamily: 'Inconsolata', monospace;
 }
 
 a{
@@ -440,12 +441,87 @@ overflow: hidden;
 
 }
 
+.slider-buttons button{
+background-color: var(--color-general);
+padding: 3px ;
+color: white;
+border: 0.5px solid black;
+font-size: 1em;
+font-weight: 700;
+font-family: var(--fontFamily);
+}
 
 
 
 
 
 /***** End slider *****/
+
+
+/***** Formulario *****/
+  #form{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    background-color: var(--bg-card-color);
+    padding: 1em;
+    border-radius: var(--border-radius);
+    
+  }
+
+  #form input{
+    width: 100%;
+    margin-bottom: 1em;
+    background-color: #fff;
+  }
+
+  .tag{
+    background-color: var(--color-general);
+    text-align: center;
+    border-radius: var(--border-radius);
+    margin-bottom: 1em;
+    color: #fff;
+    font-family: var(--fontFamily);
+    font-weight: 600;
+
+  }
+
+  #form label{
+    font-family: var(--fontFamily);
+    font-weight: 600;
+    margin-bottom: 0.2em;
+  }
+
+  #form label span{
+    color: #940404;
+  }
+
+  .btn_form{
+    width: 50%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5em;
+    border-radius: var(--border-radius);
+    background-color: var(--color-general);
+    color: #fff;
+    font-family: var(--fontFamily);
+    font-weight: 600;
+    height: 2em;
+  }
+
+  #comentario{
+    border-radius: var(--border-radius);
+  }
+
+  #mail_to_form{
+    opacity: 0;
+  }
+/**** End Formulario *****/
+
 
 
 @media (min-width:1024px) {
