@@ -105,3 +105,12 @@ function handleSubmit(event){
     $button.setAttribute('href',`mailto:maxiprog7@gmail.com?subject=${form.get('name')} ${form.get('mail')} &body=${form.get('comentario')}`)
     $button.click()
 }
+
+
+window.addEventListener("scroll",function(){
+    var header = this.document.querySelector('header');
+    var footer = this.document.querySelector('footer')
+    header.classList.toggle("abajo",window.scrollY>1);
+    footer.classList.toggle("abajo",window.scrollY>1)
+
+})
