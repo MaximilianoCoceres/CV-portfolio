@@ -110,7 +110,7 @@ function handleSubmit(event){
 window.addEventListener("scroll",function(){
     var header = this.document.querySelector('header');
     var footer = this.document.querySelector('footer')
-    header.classList.toggle("abajo",window.scrollY>1);
-    footer.classList.toggle("abajo",window.scrollY>1)
+    header.classList.toggle("abajo",window.scrollY>0);
+    footer.classList.toggle("abajo",window.scrollY>0)
 
 })
