@@ -13,6 +13,13 @@
   --slider-transform:0;
   --transition: transform 1s ;
   --fontFamily: 'Inconsolata', monospace;
+  --font-size-grande: 24px;
+}
+
+
+*{
+  text-decoration: none;
+  list-style: none;
 }
 
 a{
@@ -27,195 +34,163 @@ img{
 
 
 .main{
-  display: grid;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 body {
-  background:var(--bg-body);
-  background-repeat: no-repeat;
-  background-size: cover;
   width: 100vw;
   min-height: 100vh;
   padding-top: 3em;
   padding-bottom: 2em;
-
+  font-family: var(--fontFamily);
+  overflow-x: hidden;
 }
 
-/***** menu hamburguesa *****/
 
 
-.box {
-  position: absolute;
-  right: 0;
+/***** Section *****/
+section{
+  padding: 0 1em;
 }
 
-input {
-  width: 50px;
-  height: 50px;
-  background-color: #ffffff00;
-  appearance: none;
-  position: relative;
-  cursor: pointer;
-  border-radius: 10px;
-  box-shadow: 0 0 30px #00000026;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-input::before {
-  content: '\f550';
-  position: absolute;
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 700;
-  color: var(--color-general);
-  font-size: 2em;
-}
-
-.nav {
-  position: absolute;
-  top: 38px;
-  right: 38px;
-  width: 150px;
-  height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  border-radius: 10px;
-  box-shadow: 0 0 30px #00000026;
-  backdrop-filter: blur(30px);
-  transform: scale(0);
-  transform-origin: top right;
-  transition: transform 0.4s;
-}
-
-.nav a {
-  margin: 15px;
-  color: rgba(255, 255, 255, 0.804);
-}
-
-.nav a:hover {
-  color: #1c1c1c;
-  animation: anim 0.5s;
-}
-
-.nav img {
-  width: 1em;
-  filter: invert(1);
-}
-
-@keyframes anim {
-  0% {
-    transform: rotate(20deg);
-  }
-
-  50% {
-    transform: rotate(-20deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-input:checked~.nav {
-  transform: scale(1);
-}
-
-input:checked:before {
-  content: '\f00d';
-}
-
-/***** End menu hamburguesa *****/
-.main2{
-  position: relative;
-}
-
-.principal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 3em;
-  padding-left: 1em;
-  position: relative;
-}
-
-/***** about *****/
-
-
-
-.about p {
-  font-family: 'Inconsolata', monospace;
-  font-weight: 600;
-  color: var(--colorParrafos);
-  font-size: 1.3em;
-  
-
-}
-
-.imagen-about img{
-  border: 0 solid black;
-  border-radius: 1em;
-  background: linear-gradient(4deg, rgba(255,255,255,1) 0%, rgba(122,142,143,1) 45%, rgba(62,111,119,1) 82%, rgba(0,0,0,1) 100%);
+.container,.sobre-mi, .conocimientos, .portfolio, .contacto{
+  height: 100vh;
   width: 100%;
+  display: flex;
   position: relative;
-  z-index: 100;
+  
+  flex-direction: column;
+  justify-content: center;
 }
 
-.titulo {
-  font-family: 'Oswald', sans-serif;
-  font-weight: 700;
-  font-size: 4em;
-  letter-spacing: -7px;
-  /* opacity: 10%; */
-  z-index: 2000;
-  color: var(--color-general);
-  position: relative;
-  top: 2.5em;
-  left: 18%;
-  text-align: center;
-  cursor: pointer;
+.sobre-mi{
+  text-align: right;
+  background: url(/imagenes/fondo-sobremi_Mesa\ de\ trabajo\ 1.png);
+  background-position: 0 30%;
+  background-size:  contain;
+  background-repeat: no-repeat;
+}
+
+.conocimientos{
+  background: url(/imagenes/fondo-skills.png);
+  background-position: 25px -4%;
+  background-size:  contain;
+  background-repeat: no-repeat;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.container{
+  background: url(/imagenes/Sin\ título-1_Mesa\ de\ trabajo\ 1.png);
+  background-position: 0 30%;
+  background-size:  contain;
+  background-repeat: no-repeat;
+}
+
+.sobre-mi .text p{
+  line-height: 1.2;
+  color: var(--primary-color);
+  font-size: 20px;
+  margin-bottom: 40px;
 }
 
 
 
-.animate__animated.animate__fadeInRight {
-  animation-duration: 2s;
+.text{
+  padding-top: 1rem;
 }
 
-.principal:not(.principal.activo) {
-  display: none;
+.text .slide{
+  margin-bottom: 2rem;
 }
 
-.parrafo-about.activo{
-  transition: max-width .4s, opacity .4s, max-height .1s;
-  opacity: 1;
-  max-height: 100%;
-  /* position: absolute; */
-  /* overflow: hidden; */
-  width: 20em;
+.text .one{
+  height: 40px;
+  padding: 0px 15px;
+  line-height: 40px;
+  font-size: 24px;
+  font-weight: 500;
+  border-radius: 5px;
+  background: var(--primary-color);
+  color: #ddd;
+  font-family: var(--fontFamily);
+  display: inline-block;
+  margin-right: 22px;
 }
 
-.parrafo-about:not(.parrafo-about.activo){
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  position: absolute;
- 
+.text .two{
+  font-size: var(--font-size-grande);
+  color: var(--primary-color);
+  display: inline-block;
+  font-weight: 900;
 
+  
 }
+
+.text h1{
+  font-size: 90px;
+  font-weight: 900;
+  color: var(--primary-color);
+  line-height: 0.9;
+  margin: 0 0 8px;
+}
+
+.text h2{
+  color: var(--primary-color);
+  margin: 0 0 30px;
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+span{
+  color: #44bba4;
+}
+
+.container .text p{
+  color: var(--primary-color);
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+
+.portfolio{
+  height: 100vh;
+  text-align: right;
+  background: url(/imagenes/fondo-portfolio.png);
+  background-position: 0 15%;
+  background-size:  contain;
+  background-repeat: no-repeat;
+}
+
+
+.contacto .text h1{
+  font-size: 80px;
+}
+
+.contacto{
+  height: 100vh;background: url(/imagenes/fondo-contactos.png);
+  background-position: 30px 10%;
+  background-size:  contain;
+  background-repeat: no-repeat;
+}
+
+
+/***** End Section *****/
+
+
+
+
+
+
 
 
 /***** hABILIDADES *****/
 
-.parrafo-about{
-  color: #ddd;
-}
-
-.parrafo-about .card__title.experiencia{
-  text-align: center;
-}
 
 
 .skills{
@@ -321,104 +296,7 @@ input:checked:before {
 /***** End hABILIDADES *****/
 
 
-/***** End about *****/
 
-/***** media *****/
-@media(max-width:1024px) {
-
-  .main{
-    grid-template-columns:auto;
-  }
-
-  .about p {
-    font-size: 0.85em;
-    color: var(--bg-card-color);
-  }
-
-  .imagen-about {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--bg-card-color);
-    margin: 0.5em 1em 0 1em;
-    padding: 1em;
-    flex-direction: column;
-    border-radius: var(--border-radius);
-    
-  } 
-
-
-  .imagen-about img {
-    width: 10em;
-
-
-  }
-
-  .parrafo-about.activo{
-    width: 100%;
-  }
-
-  .principal{
-    display: block;
-    padding: 0.9em;
-  }
-
-
-  .titulo{
-    top:0;
-    left: 0;
-  }
-  /* .datos{
-    display: none;
-  } */
-
-  .datos{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Inconsolata', monospace;
-    font-size: 1em;
-    color: #393e41;
-    background-color: var(--bg-card-color);
-    margin: 0.5em;
-  }
-
-  .datos-propios{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1em 0;
-    margin: 0;
-    font-size: 1.2em;
-    font-weight: 700;
-
-  }
-
-  .card__link img{
-    width: 2em;
-    background: none;
-   
-  }
-
-  .card__link{
-    display: flex;
-    align-items: center;
-    justify-content:center;
-    margin-bottom: 0.2em;
-  }
-
-  .descripcion{
-    font-size: 0.8em;
-    text-align:start;
-    line-height: 1.6;
-    display: none;
-  }
-
-}
 
 
 /***** slider *****/
@@ -431,7 +309,6 @@ input:checked:before {
 }
 
 .slider__container{
-/* width: 380px; */
 margin-left: auto;
 margin-right: auto;
 border: 4px solid #fff;
@@ -443,7 +320,6 @@ overflow: hidden;
 
 .slider__element{
   min-width: 100%;
-  /* height: 180px; */
   font-size: 3rem;
   text-align: center;
   line-height: 300px;
@@ -465,18 +341,13 @@ overflow: hidden;
 .slider-buttons button{
 background-color: transparent;
 padding: 3px ;
-color: white;
+color: var(--primary-color);
 border: none;
 outline: none;
 font-size: 1em;
 font-weight: 700;
 font-family: var(--fontFamily);
 }
-
-
-
-
-
 /***** End slider *****/
 
 
@@ -547,73 +418,18 @@ font-family: var(--fontFamily);
 
 
 
-@media (min-width:1024px) {
 
-  .about{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+@media (min-width:992px){
+
+  .container{
+    background-size: cover;
+
   }
   
-  .imagen-about{
-    position: absolute;
-    margin: 2em;
-    background-color: var(--bg-card-color);
-    padding: 2em;
-    border-radius: var(--border-radius);
-    width: 30em;
-  }
-  .card{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    padding: 0.4em;
-    border-radius: var;
+  section{
+    padding: 0 16%;
   }
 
-  .datos{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Inconsolata', monospace;
-    font-size: 1em;
-    color: #393e41;
+ 
   }
 
-  .datos-propios{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1em 0;
-    margin: 0;
-    font-size: 1.2em;
-    font-weight: 700;
-
-  }
-
-  .card__link img{
-    width: 2em;
-    background: none;
-   
-  }
-
-  .card__link{
-    display: flex;
-    align-items: center;
-    justify-content:center;
-    margin-bottom: 0.2em;
-  }
-
-  .descripcion{
-    font-size: 0.8em;
-    text-align:start;
-    line-height: 1.6;
-  }
-}
-
-/**** End media *****/
