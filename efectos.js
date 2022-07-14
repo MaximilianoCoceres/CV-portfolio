@@ -1,7 +1,5 @@
 const item = document.querySelectorAll('.item')
 const principal = document.querySelectorAll('.sobre-mi')
-
-
 const sliderContainer = document.getElementById('slider-container');
 const slider = document.getElementById('slider');
 const buttonLeft = document.getElementById('button-left');
@@ -97,3 +95,16 @@ window.addEventListener("scroll", function () {
     footer.classList.toggle("abajo", window.scrollY > 0);
 
 })
+
+
+const sr = ScrollReveal ({
+    distance: '80px',
+    duration: 2800,
+    reset:true
+
+})
+
+sr.reveal('.sobreMi,.miPortfolio',{delay:300,origin:'right'});
+sr.reveal('.text-container,.skills,.contactame',{delay:300,origin:'left'});
+
+

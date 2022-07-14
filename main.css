@@ -429,7 +429,45 @@ font-family: var(--fontFamily);
     background-size: cover;
 
   }
+
+  .container .text p{
+    width: 50%;
+  }
+
+  .sobre-mi .text p{
+    width: 50%;
+    position: relative;
+    left: 50%;
+  }
+
+  .conocimientos .text .card{
+    width: 50%;
+    
+  }
+
+  .conocimientos{
+    background-position: 300px -4%;
+  }
   
+
+  .contacto .text{
+    width: 60%;
+  }
+
+  .contacto{
+    background-position: 400px 80%;
+  }
+
+  .slider__container{
+    width: 70%;
+    position: relative;
+    left: 15rem;
+  }
+
+  .slider-buttons{
+    position: relative;
+    left: 15rem;
+  }
   section{
     padding: 0 16%;
   }
