@@ -41,7 +41,7 @@ img{
 }
 
 body {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   padding-top: 3em;
   padding-bottom: 2em;
@@ -173,12 +173,12 @@ span{
 
 
 .contacto .text h1{
-  font-size: 80px;
+  font-size: 4em;
 }
 
 .contacto{
   height: 100vh;background: url(/imagenes/fondo-contactos.png);
-  background-position: 30px 20%;
+  background-position: 30px 13%;
   background-size:  contain;
   background-repeat: no-repeat;
 }
@@ -421,12 +421,52 @@ font-family: var(--fontFamily);
 /**** End Formulario *****/
 
 
+@media screen and (min-width:768px) and (max-width:1023px){
+  .container .text p{
+    width: 50%;
+  }
+
+  .sobre-mi{
+    padding: 2.3em;
+  }
+
+  .sobre-mi .text p{
+    width: 65%;
+    display: inline-block;
+  }
+
+  .conocimientos{
+    background-position: -10em -4%;
+    padding: 2.3em;
+  }
+
+  .portfolio{
+    padding: 2.3em;
+    background-position:0 -14% ;
+  }
+
+  .contacto{
+    padding: 2.3em;
+    background-position: 30px -50%;
+  }
+
+  .btncv{
+    margin-right: 2em;
+    bottom: 20px;
+  }
+
+  .footer-css-header{
+    bottom: 7px;
+  }
 
 
-@media (min-width:992px){
+}
+
+@media (min-width:1024px){
 
   .container{
     background-size: cover;
+    background-position: -10em 30%;
 
   }
 
@@ -446,16 +486,20 @@ font-family: var(--fontFamily);
   }
 
   .conocimientos{
-    background-position: 300px -4%;
+    background-position: 2em -4%;
   }
   
 
   .contacto .text{
     width: 60%;
   }
+  
+  .portfolio{
+    background-position: -6em 15%;
+  }
 
   .contacto{
-    background-position: 400px 80%;
+    background-position: 3em 80%;
   }
 
   .slider__container{

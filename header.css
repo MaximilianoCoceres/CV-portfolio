@@ -85,8 +85,8 @@
 
 .btncv {
     position: fixed;
-    bottom: 10px;
-    right: 10px;
+    bottom: 22px;
+    right: 20px;
 }
 
 
@@ -258,7 +258,7 @@ input:checked:before {
     font-family: 'Kanit', sans-serif;
     font-weight: 100;
     position: fixed;
-    bottom: 0;
+    bottom: 7px;
     margin-right: -1em;
     /* background-color: rgb(9,42,58); */
 
