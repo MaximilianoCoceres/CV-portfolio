@@ -486,7 +486,7 @@ font-family: var(--fontFamily);
   }
 
   .conocimientos{
-    background-position: 2em -4%;
+    background-position: 30em -4%;
   }
   
 
@@ -499,7 +499,7 @@ font-family: var(--fontFamily);
   }
 
   .contacto{
-    background-position: 3em 80%;
+    background-position: 30em 80%;
   }
 
   .slider__container{
